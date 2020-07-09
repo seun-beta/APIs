@@ -9,20 +9,21 @@ ctx.verify_mode = ssl.CERT_NONE
 
 url = urllib.request.urlopen('https://nigerianbanks.xyz/', context = ctx)
 
-data = url.read().decode()
+bank_data = url.read().decode()
 
-info = json.loads(data)
+bank_json = json.loads(bank_data)
 
-dump_info = json.dumps(info, indent = 4)
-# print (dump_info)
-print (len(info))
-count = 0
-for bank in info :
-    a = bank['logo']
+dump_json = json.dumps(bank_json, indent = 4)
+print (dump_json)
+print (len(bank_json))
+
+for each_bank in bank_json :
+    image_url = each_bank['logo']
     # print (a)
-    count += 1
-    image = urllib.request.urlopen(a).read()
-    image_name = str(count)+'.jpg'
+    image_url_list = image_url.split('/')
+    # print (b)
+    
+    image = urllib.request.urlopen(image_url).read()
+    image_name = image_url_list[4]
     f_handle = open(image_name, 'wb')
     f_handle.write(image)
-    
