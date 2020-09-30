@@ -1,5 +1,5 @@
 # Exchange Rate API  
-This Python program uses the Exchange Rate API that can be found on (https://exchangeratesapi.io/) [exchangeratesapi.io] to check the exchange rate of different currencies  
+This Python program uses the Exchange Rate API that can be found on https://exchangeratesapi.io/ to check the exchange rate of different currencies  
 
 # Please note that EUR is the DEFAULT BASE CURRENCY of this API
 The program has the following features:
